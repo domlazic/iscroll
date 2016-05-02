@@ -1,0 +1,28 @@
+{
+  "name": "iscroll-shoutem",
+  "description": "Smooth scrolling for the web",
+  "main": "build/iscroll.js",
+  "authors": [
+    "Matteo Spinelli <matteo@cubiq.org> (http://cubiq.org)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "scrolling",
+    "carousel",
+    "zoom",
+    "iphone",
+    "android",
+    "mobile",
+    "desktop"
+  ],
+  "homepage": "https://github.com/domlazic/iscroll",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
