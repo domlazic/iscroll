@@ -294,6 +294,8 @@ IScroll.prototype = {
 		this.isInTransition = 0;
 		this.initiated = 0;
 		this.endTime = utils.getTime();
+        
+        this._execEvent('beforeScrollEnd');
 
 		// reset if we are outside of the boundaries
 		if ( this.resetPosition(this.options.bounceTime) ) {
