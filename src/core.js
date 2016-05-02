@@ -170,7 +170,7 @@ IScroll.prototype = {
 		this.pointX    = point.pageX;
 		this.pointY    = point.pageY;
 
-		this._execEvent('beforeScrollStart');
+		this._execEvent('beforeScrollStart', e);
 	},
 
 	_move: function (e) {
@@ -268,6 +268,7 @@ IScroll.prototype = {
 
 /* REPLACE END: _move */
 
+        this._execEvent('scrollMove', e);
 	},
 
 	_end: function (e) {

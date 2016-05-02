@@ -1,6 +1,9 @@
 
 		if ( this.options.snap ) {
 			var snap = this._nearestSnap(newX, newY);
+            
+            this._execEvent('pageChange', snap.pageX, this.currentPage.pageX);
+                   
 			this.currentPage = snap;
 			time = this.options.snapSpeed || Math.max(
 					Math.max(

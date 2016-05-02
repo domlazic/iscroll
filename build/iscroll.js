@@ -479,7 +479,7 @@ IScroll.prototype = {
 		this.pointX    = point.pageX;
 		this.pointY    = point.pageY;
 
-		this._execEvent('beforeScrollStart');
+		this._execEvent('beforeScrollStart', e);
 	},
 
 	_move: function (e) {
@@ -577,6 +577,7 @@ IScroll.prototype = {
 
 /* REPLACE END: _move */
 
+        this._execEvent('scrollMove', e);
 	},
 
 	_end: function (e) {
@@ -642,6 +643,9 @@ IScroll.prototype = {
 
 		if ( this.options.snap ) {
 			var snap = this._nearestSnap(newX, newY);
+            
+            this._execEvent('pageChange', snap.pageX, this.currentPage.pageX);
+                   
 			this.currentPage = snap;
 			time = this.options.snapSpeed || Math.max(
 					Math.max(
@@ -1408,7 +1412,9 @@ IScroll.prototype = {
 				Math.min(Math.abs(posX - this.x), 1000),
 				Math.min(Math.abs(posY - this.y), 1000)
 			), 300) : time;
-
+            
+        this._execEvent('pageChange', x, this.currentPage.pageX);
+        
 		this.currentPage = {
 			x: posX,
 			y: posY,

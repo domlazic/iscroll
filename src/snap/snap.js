@@ -207,7 +207,9 @@
 				Math.min(Math.abs(posX - this.x), 1000),
 				Math.min(Math.abs(posY - this.y), 1000)
 			), 300) : time;
-
+            
+        this._execEvent('pageChange', x, this.currentPage.pageX);
+        
 		this.currentPage = {
 			x: posX,
 			y: posY,
